@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+    
+}
+
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;  
+    }
+}
+
+
+.box_3D{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    height: 400vh;
+    position: relative;
+    width: 100%;
+    /* overflow-y: hidden; */
+}
+
+.box_3D .box{
+    position: sticky;
+    top: calc(50vh - 150px);
+    /* top: 300px; */
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+    z-index: 100;
+}
+
+.box_3D .box1{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 50px;
+}
+
+.box_3D .box1 img{
+    /* width: 200px; */
+    height: 25vh;
+}
+
+.box_3D .box2{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 50px;
+}
+
+.box_3D .box2 img{
+    /* width: 200px; */
+    height: 25vh;
+}
+
+
+.box_3D .box .cart{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg , #ddd , #eee);
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)* 90deg)) translateZ(200px);
+    user-select: none;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent ,transparent ,transparent ,rgb(255 255 255 / 32%) ,transparent,transparent  );
+}
+
+
+
+.box_3D .box .cart h2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    color: rgb(255, 255, 255); 
+    mix-blend-mode: difference; 
+}
+
+.box_3D .box .cart .img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.box_3D .box .cart .img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 992px){
+    .box_3D .box {
+        width: 300px;
+        height: 450px;
+        top: calc(50vh - 225px);
+        left: calc(50% - 150px);
+    }
+
+    .box_3D .box .cart{
+        transform: rotateY(calc(var(--i)* 90deg)) translateZ(150px);
+    }
+
+    .box_3D .box1{
+        left: 15px;
+    }
+    
+    .box_3D .box1 img{
+        width: 200px;
+    }
+
+    .box_3D .box2{
+        right: 15px;
+    }
+    
+    .box_3D .box2 img{
+        width: 200px;
+    }
+    
+}
+
+@media (max-width: 768px){
+    .box_3D .box {
+        width: 160px;
+        height: 400px;
+        top: calc(50vh - 200px);
+        left: calc(50% - 80px);
+    }
+
+    .box_3D .box .cart{
+        transform: rotateY(calc(var(--i)* 90deg)) translateZ(80px);
+    }
+
+    .box_3D .box1{
+        left: 10px;
+    }
+    
+    .box_3D .box1 img{
+        width: 100px;
+    }
+
+    .box_3D .box2{
+        right: 10px;
+    }
+    
+    .box_3D .box2 img{
+        width: 100px;
+    }
+    
+}
